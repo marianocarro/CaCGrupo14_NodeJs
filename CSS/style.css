@@ -3,36 +3,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    /*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif*/
+  font-family: "Radio Canada Big", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <500>;
+  font-style: italic;
 }
-/**/
 
-.centrado{
-    text-align: center;
-}
-.espaciar{
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
-.frases i{
-    font-size: 100px;
-}
+
+
 /*ESTILO PARA EL ENCABEZADO DE LA PAGINA*/
 
 header {
     text-align: center;
-    padding: 20px 0; 
+    /*padding: 20px 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 20%;
-    background-color: aqua;
+    /*background-color: aqua;*/
+    background-image: radial-gradient(circle at 36.02% 51.22%, #3aaf6e 0, #0eb07b 3.33%, #00b188 6.67%, #00b295 10%, #00b2a2 13.33%, #00b2af 16.67%, #00b2bc 20%, #00b1c8 23.33%, #00b0d3 26.67%, #00afdd 30%, #00ade6 33.33%, #00abed 36.67%, #00a9f3 40%, #00a6f7 43.33%, #00a2f9 46.67%, #469ef9 50%, #679af7 53.33%, #8095f4 56.67%, #9690ef 60%, #a98be8 63.33%, #b985e0 66.67%, #c780d6 70%, #d47ccb 73.33%, #de77c0 76.67%, #e674b4 80%, #ec72a7 83.33%, #f0719a 86.67%, #f2718d 90%, #f27281 93.33%, #f17475 96.67%, #ee7869 100%);
 }
 header img {
+    
+    text-align: center;
     width: 60px; /* Tamaño del logotipo */
     height: auto; /* Altura automática para mantener la proporción */
 }
 /*ESTILO PARA EL MENU NAV*/
+
 .logo {
     float: left;
     text-align: left;
@@ -69,6 +68,29 @@ a:hover {
     font-weight: bold;
 }
 
+/*ESILOS INDEX*/
+.servicios {
+    text-align: center;
+    padding-top: 100px;
+    
+   }
+   .centrado{
+       text-align: center;
+   }
+   .espaciar{
+       padding-top: 100px;
+       
+   }
+   .frases i{
+       font-size: 100px;
+   }
+   
+/*ESTILOS CARRUSEL*/
+#carrusel {
+    margin-top: 3%;
+    
+}
+
 /* ESTILO PARA PAGINA NOSOTROS*/
 main {
     display: flex;
@@ -96,10 +118,7 @@ main img {
     object-fit: contain;
 }
 
-/*ESTILOS CARRUSEL*/
-#carrusel {
-    margin-top: 3%;
-}
+
 
 /*ESTILO PARA FORMULARIO*/
 .error {
