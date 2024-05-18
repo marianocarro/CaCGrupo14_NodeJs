@@ -69,6 +69,33 @@ a:hover {
     font-weight: bold;
 }
 
+/* ESTILO PARA PAGINA NOSOTROS*/
+main {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+#nosotros {
+    flex: 1;
+}
+
+#nosotros h2 {
+    font-weight: bold;
+}
+
+#nosotros p {
+    white-space: pre-line;
+}
+
+main img {
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+}
+
 /*ESTILOS CARRUSEL*/
 #carrusel {
     margin-top: 3%;
