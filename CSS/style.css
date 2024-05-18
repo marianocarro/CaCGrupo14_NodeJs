@@ -183,6 +183,9 @@ main img {
 .tipo-telefono{
        justify-content: center;
 }
+.iframe{
+    padding-top: 50px;
+}
 
 /*ESTILOS PAGINA EQUIPO*/
 .titulo {
