@@ -91,6 +91,31 @@ a:hover {
     
 }
 
+/*ESTILO IFRAME*/
+.visibilidad{
+    background-color: orange;
+    text-align: center;
+    color:#0056b3;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.iframe_container{
+position: relative;
+overflow: hidden;
+}
+
+.video{
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 300px;
+    border: 0;
+    padding-left: 25%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
 /* ESTILO PARA PAGINA NOSOTROS*/
 main {
     display: flex;
@@ -342,14 +367,14 @@ footer {
 .footer-columns {
     display: flex;
     flex-wrap: wrap;
-    padding: 1.5rem 0.5rem 1.25rem 0.5rem;
+    padding: 0.25rem 0rem 0.25rem 0rem;
 }
 
 .footer-columns section, 
 .footer-columns .footer-logo {
     display: flex;
     flex-direction: column;
-    flex: 1 0 10rem;
+    flex: 1 0 1rem;
     max-width: 10rem;
 }
  
@@ -387,7 +412,7 @@ footer {
     gap: 1rem;
     flex-grow: 1;
     max-width: 10rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
 }
 
 .footer-logo svg {
