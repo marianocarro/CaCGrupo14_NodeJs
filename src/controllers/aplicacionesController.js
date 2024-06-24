@@ -4,8 +4,8 @@ module.exports= {
      
     getAllAplic: async(req,res)=>{
         try{
-            const [aplic] =await conn.query(`SELECT * FROM Aplicaciones`)
-            res.json(aplic);           
+            const [registros] =await conn.query(`SELECT * FROM Aplicaciones`)
+            res.json(registros);           
         }catch (error) {
 			throw error
 		} finally{
