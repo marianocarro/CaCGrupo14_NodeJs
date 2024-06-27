@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <h1>Hola desde una vista en EJS</h1>
-</body>
-</html>
+<%- include('partials/head') %>
+	<body>
+		<h2>Modificar Aplicacion Disponible</h2>
+		
+		<form action="/modificar?_metodo=PUT" method="POST">
+			<input type="text" name="Nombre" value="<%= registro.Nombre %>">
+			<input type="text" name="Descripcion" value="<%= registro.Descripcion %>">
+			<input type="number" name="Precio" value="<%= registro.Precio %>">
+            <input type="date" name="FechaLanzamiento" value="<%= registro.FechaLanzamiento %>">
+
+			<input type="hidden" name="AplicacionID" value="<%= registro.AplicacionID %>"><br>
+			
+			<input type="submit" value="Actualizar">
+		</form>
+<%- include('partials/footer') %>
+

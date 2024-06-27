@@ -41,32 +41,40 @@ module.exports= {
         }
     },*/
 
-    getModificarById: async (req, res) => {
-        const [appmodif] =await connection.query (`SELECT * FROM Aplicaciones WHERE id=?`, req.params.id);
-        res.render('modificar', {
-            tituloDePagina: 'Pagina para modificar Items',
-            registro: appmodif[0]
-        });    
-    },
-
-    updateAplicById: async (req, res) => {
-        const sql = `UPDATE Aplicaciones SET Nombre=?, Descripcion=?, Precio=?, FechaLanzamiento=? WHERE id=?`;
+    getModificarById: async (req, res) => { //muestra la informacion a modificar
+        try {
+            // Realiza la consulta para obtener la información a modificar
+            const [modificar] = await conn.query(`SELECT * FROM Aplicaciones WHERE AplicacionID=?`, [req.params.id]);
+            
+            // Renderiza la vista 'modificar' y pasa los datos necesarios a la plantilla EJS
+            res.render('modificar', {
+                tituloDePagina: 'Modificar Aplicacion Cargada',
+                registro: modificar[0]
+            });
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error en el servidor');
+        }},
+       
+    updateAplicById: async (req, res) => { //realiza la modificacion
+        const sql = `UPDATE Aplicaciones SET Nombre=?, Descripcion=?, Precio=?, FechaLanzamiento=? WHERE AplicacionID=?`;
         const { Nombre, Descripcion, Precio, FechaLanzamiento } = req.body;
-        const appmodificado = await connection.query(sql, [Nombre, Descripcion, Precio, FechaLanzamiento]);
-        res.redirect('/aplicaciones')
+        try {
+           await conn.query(sql, [Nombre, Descripcion, Precio, FechaLanzamiento, req.params.id]);
+             res.redirect('/aplicaciones');
+         } catch (error) {
+             console.error(error);
+             res.status(500).send('Error en el servidor');
+         }
+        /*const sql = `UPDATE Aplicaciones SET Nombre=?, Descripcion=?, Precio=?, FechaLanzamiento=? WHERE AplicacionID=?`;
+        const { Nombre, Descripcion, Precio, FechaLanzamiento } = req.body;
+        const appmodificado = await conn.query(sql, [Nombre, Descripcion, Precio, FechaLanzamiento]);
+        res.redirect('/listadoApp.html')     */
     },
 
-    deleteAplicById: (req, res) => {
-        const { id } = req.params;
-        const sql = `DELETE FROM aplicaciones WHERE id=?`;
-        connection.query(sql, [id], (err, results) => {
-            if (err) {
-                console.error('Error al borrar aplicación:', err);
-                res.status(500).json({ error: 'Error al borrar aplicación' });
-                return;
-            }
-            res.json({ mensaje: 'Aplicación borrada' });
-        });
+    deleteAplicById: async(req, res) => {
+        const eliminado = await conn.query(`DELETE FROM Aplicaciones WHERE AplicacionID=?`, req.body.idEliminar)
+		res.redirect('/listadoApp.html')
     }
 
 

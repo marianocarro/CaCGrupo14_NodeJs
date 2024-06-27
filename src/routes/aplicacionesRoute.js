@@ -2,11 +2,11 @@ const express = require("express");
 const router = express.Router();
 const apliController =require('../controllers/aplicacionesController');
 
-router.get('/', apliController.getAllAplic);
-router.post('/',apliController.createAplic);
-router.get('/modificar/:id' , apliController.getModificarById);
-router.put('/modificar', apliController.updateAplicById);
-router.delete('/eliminar', apliController.deleteAplicById);
+router.get('/aplicaciones', apliController.getAllAplic);
+router.post('/aplicaciones',apliController.createAplic);
+router.get('/modificar/:id', apliController.getModificarById);
+router.put('/modificar/:id', apliController.updateAplicById);
+router.delete('/aplicaciones', apliController.deleteAplicById);
 
 module.exports=router;
 
